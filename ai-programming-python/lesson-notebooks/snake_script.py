@@ -3,7 +3,7 @@ snake_string = """
 Welcome to Python3!
 
              ____
-            / . .\\
+            / . .\
             \  ---<
              \  /
    __________/ /
