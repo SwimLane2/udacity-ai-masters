@@ -3,7 +3,7 @@ snake_string = """
 Welcome to Python3!
 
              ____
-            / . .\
+            / . .\\
             \  ---<
              \  /
    __________/ /
@@ -11,5 +11,6 @@ Welcome to Python3!
 
 <3, Juno
 """
+
 
 print(snake_string * how_many_snakes)
