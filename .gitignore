@@ -1,0 +1,66 @@
+# -------------------------
+# Python build / runtime files
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# -------------------------
+# Virtual environments
+# -------------------------
+env/
+venv/
+.venv/
+ENV/
+conda-env/
+
+# -------------------------
+# Jupyter & Colab
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb_convert
+*.nbconvert
+
+# -------------------------
+# Data files (avoid committing large or sensitive data)
+# -------------------------
+data/*.csv
+data/*.tsv
+data/*.json
+data/*.xlsx
+data/*.zip
+data/*.tar.gz
+data/*.h5
+*.pickle
+*.pkl
+
+# Allow small datasets in project folders (optional override)
+!ai-programming-python/**/data/*.csv
+!ai-programming-python/**/data/*.json
+
+# -------------------------
+# OS-generated files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Logs and debug
+# -------------------------
+*.log
+logs/
+debug/
+
+# -------------------------
+# Credentials / tokens (never commit!)
+# -------------------------
+*.env
+.envrc
+*.key
+*.token
+*.secret
+secrets/
