@@ -7,5 +7,3 @@ The development workflow uses **Google Colab + GitHub**, avoiding the need for l
 
 ---
 
-## 📁 Repository Structure
-
