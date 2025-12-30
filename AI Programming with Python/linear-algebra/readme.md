@@ -1,1 +1,0 @@
-Revisiting the fundamentals of linear algebra, as it is a critical prerequisite for machine learning, particularly deep learning, which underpins many of today’s most advanced artificial intelligence developments.
