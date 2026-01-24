@@ -2,10 +2,23 @@ import helper
 import gold
 
 def parse_content(content):
-    return {}
+    # parse file content into a dictionary mapping word to frequency
+    words = {}
+    for line in content.split('\n'):
+        word, frequency = line.split()
+        words[word] = int(frequency)
+    return words
 
 def make_tree(words):
-    return {}
+    trie = {}
+    for word, frequency in words.items():
+        node = trie
+        for ch in word:
+            if ch not in node:
+                node[ch] = {}
+            node = node[ch]
+        node[f'${word}'] = frequency
+    return trie
 
 def predict(tree, numbers):
     return {}
