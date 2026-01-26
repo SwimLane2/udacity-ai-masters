@@ -13,8 +13,8 @@ def encrypt(original_text, shift_amount):
     cipher_text = ""
     for letter in original_text:
         get_index = alphabet.index(letter) + shift_amount
-        if get_index > 25:
-            get_index -= 26
+        if get_index > len(alphabet) - 1: # > 25
+            get_index -= len(alphabet) # - 26. This will loop it back to the start of the alphabet
         cipher_text += alphabet[get_index] 
     print(f"The encoded text is {cipher_text}")
 
