@@ -5,6 +5,12 @@ print(art.logo)
 import os
 clear = lambda: os.system('cls')
 
+
+def find_highest_bidder(bidding_record):
+    highest_bidder_name = max(bidding_record, key=bidding_record.get)
+    highest_bidder_amount = bidding_record[highest_bidder_name]
+    return print(f"The winner is {highest_bidder_name} with a bid of £{highest_bidder_amount}")
+
 bid_data = {}
 bidder = True
 while bidder:
@@ -14,11 +20,16 @@ while bidder:
     bid_data[name] = price
     if other_bidders == "no":
         bidder = False
-        highest_bidder_name = max(bid_data, key=bid_data.get)
-        highest_bidder_amount = bid_data[highest_bidder_name]
-        print(f"The winner is {highest_bidder_name} with a bid of £{highest_bidder_amount}")
+        find_highest_bidder(bid_data)
     else:
         clear()
+
+
+
+
+
+
+
 
 # TODO-1: Ask the user for input
 # TODO-2: Save data into dictionary {name: price}
