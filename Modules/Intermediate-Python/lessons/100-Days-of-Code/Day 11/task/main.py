@@ -27,6 +27,7 @@ while is_game_over:
         print(art.logo)
         user = []
         computer = []
+        #test
                
         #1. Deal both user and computer a starting hand of 2 random card values.
         for _ in range(2):
@@ -47,7 +48,7 @@ while is_game_over:
             elif computer_score:
                 print("You lose 😤")
         elif user_score > 21:
-            
+
 
         
 
