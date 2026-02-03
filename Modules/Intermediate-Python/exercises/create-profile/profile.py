@@ -1,12 +1,9 @@
 """Write a function that prints a profile, given values."""
 
 def create_profile(given_name, *surnames, **details):
-    full_name = " ".join((given_name,) + surnames)
-    print(full_name)
-
+    print(given_name, *surnames)
     for key, value in details.items():
-        print(f"{key}: {value}")
-
+        print(key, value, sep=': ')
 
 
 if __name__ == '__main__':
