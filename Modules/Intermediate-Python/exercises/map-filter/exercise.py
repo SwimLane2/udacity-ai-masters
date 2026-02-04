@@ -9,8 +9,10 @@
 word = ["apple", "orange", "pear"]
 
 a = map(len, word)
-
-# b = map(???, ???)
-# c = map(???, ???)
-# d = map(???, ???)
+b = map(str.upper, word)
+c = map(lambda s: s[::-1], word)
+d = map(lambda s: s[:2], word)
 print(list(a))
+print(list(b))
+print(list(c))
+print(list(d))
