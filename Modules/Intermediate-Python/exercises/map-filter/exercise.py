@@ -26,7 +26,6 @@
 # (d) range(100) => (1, 2, 4, 7, 8, 11, 13, 14, 16, 17, ...)  (not div by 3 and not div by 5)
 
 a = filter(lambda x: x % 3 ==0, range(100))
-
 b = filter(lambda x: x % 5 ==0, range(100))
 c = filter(lambda x: x % 15 == 0, range(100))
 d = filter(lambda x: x % 3 != 0 and x % 5 != 0 , range(100) )
