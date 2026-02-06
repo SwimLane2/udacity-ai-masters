@@ -2,8 +2,9 @@ def generate_tribonacci_numbers():
     a, b, c = 0, 0, 1
     # Yield an infinite stream of Tribonacci numbers! The next value of the sequence will be c + b + a.
     while True:
-        a, b, c = b, c, a + b + c 
         yield a
+        a, b, c = b, c, a + b + c 
+        
     
 def is_tribonacci(num):
     """Return whether `num` is a Tribonacci number."""
@@ -14,7 +15,7 @@ def is_tribonacci(num):
         if _ > num:
             return False
         
-for n in range(100):
+for n in range(10):
     print(n, is_tribonacci(n))
     
 
