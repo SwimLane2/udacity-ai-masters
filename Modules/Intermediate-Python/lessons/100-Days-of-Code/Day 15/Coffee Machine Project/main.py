@@ -64,7 +64,7 @@ def is_resource_sufficient(drink_name):
     Check whether machine has enough ingredients for the selected drink.
 
     Args:
-        drink_name (str): Key from MENU (e.g., 'latte').
+        drink_name (str): Key from MENU (e.g., 'latte')
 
     Returns:
         bool: True if all required ingredients are available, else False.
