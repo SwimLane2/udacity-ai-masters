@@ -143,5 +143,5 @@ def run_coffee_machine():
         else:
             print("Invalid choice")
     
-# call this once at the bottom of your file
+
 run_coffee_machine()
