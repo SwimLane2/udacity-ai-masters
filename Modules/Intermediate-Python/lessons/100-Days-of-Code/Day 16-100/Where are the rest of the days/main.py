@@ -16,6 +16,11 @@
 
 # my_screen.exitonclick()
 
-# python3 -m pip install -U git+https://github.com/prettytable/prettytable
+from prettytable import PrettyTable
+table = PrettyTable()
+table.add_column("Pokemon Name", ["Pikachu","Squirtle","Charmander"])
+table.add_column("Type", ["Electric","Water","Fire"])
+table.align = "l"
 
-python -m pip --version
+print(table)
+
