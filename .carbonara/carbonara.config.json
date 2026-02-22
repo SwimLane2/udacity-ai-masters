@@ -1,0 +1,12 @@
+{
+  "name": "udacity-ai-masters",
+  "description": "udacity-ai-masters - Carbonara project",
+  "type": "api",
+  "version": 1,
+  "createdAt": "2026-02-22T06:08:38.701Z",
+  "projectId": 1,
+  "database": {
+    "path": ".carbonara/carbonara.db"
+  },
+  "tools": {}
+}
