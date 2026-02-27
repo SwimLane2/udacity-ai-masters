@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import carbonara
 base_path = Path(__file__).parent
 input_path = base_path / "data" / "wages.csv"
 output_path = base_path / "data" / "high_wages.csv"
