@@ -1,8 +1,8 @@
 import csv
 from pathlib import Path
 base_path = Path(__file__).parent
-input_path = base_path / "wages.csv"
-output_path = base_path / "high_wages.csv"
+input_path = base_path / "data" / "wages.csv"
+output_path = base_path / "data" / "high_wages.csv"
 
 high_wages = []
 
