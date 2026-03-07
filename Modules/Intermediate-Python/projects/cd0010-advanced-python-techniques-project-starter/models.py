@@ -32,22 +32,32 @@ class NearEarthObject:
     initialized to an empty collection, but eventually populated in the
     `NEODatabase` constructor.
     """
-    # TODO: How can you, and should you, change the arguments to this constructor?
+    # Task Done: How can you, and should you, change the arguments to this constructor?
     # If you make changes, be sure to update the comments in this file.
-    def __init__(self, **info):
-        """Create a new `NearEarthObject`.
+    
+    # Constructor accepts parsed NEO fields directly.
+    def __init__(self, designation, name=None, diameter=float('nan'), hazardous=False):
+        """Create a new NearEarthObject.
 
-        :param info: A dictionary of excess keyword arguments supplied to the constructor.
+        :param designation: The primary designation for this NEO.
+        :param name: The optional IAU name for this NEO.
+        :param diameter: The optional diameter, in kilometers, for this NEO.
+        :param hazardous: Whether this NEO is potentially hazardous.
         """
-        # TODO: Assign information from the arguments passed to the constructor
+        # Task Done: Assign information from the arguments passed to the constructor
         # onto attributes named `designation`, `name`, `diameter`, and `hazardous`.
         # You should coerce these values to their appropriate data type and
         # handle any edge cases, such as a empty name being represented by `None`
         # and a missing diameter being represented by `float('nan')`.
-        self.designation = ''
-        self.name = None
-        self.diameter = float('nan')
-        self.hazardous = False
+        
+        # Normalize incoming raw values to stable internal types.
+        self.designation = str(designation)
+        self.name = str(name).strip() if name not in (None, '') else None
+        self.diameter = float(diameter) if diameter not in (None, '') else float('nan')
+        if isinstance(hazardous, str):
+            self.hazardous = hazardous.upper() == 'Y'
+        else:
+            self.hazardous = bool(hazardous)
 
         # Create an empty initial collection of linked approaches.
         self.approaches = []
@@ -55,15 +65,20 @@ class NearEarthObject:
     @property
     def fullname(self):
         """Return a representation of the full name of this NEO."""
-        # TODO: Use self.designation and self.name to build a fullname for this object.
-        return ''
+        # Task Done: Use self.designation and self.name to build a fullname for this object.
+        
+        # Build "{designation} ({name})" when name exists, otherwise designation.
+        if self.name:
+            return f"{self.designation} ({self.name})"
+        return self.designation
 
     def __str__(self):
         """Return `str(self)`."""
-        # TODO: Use this object's attributes to return a human-readable string representation.
+        # Task Done: Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return f"A NearEarthObject ..."
+        hazard_text = "is" if self.hazardous else "is not"
+        return f"NEO {self.fullname} has a diameter of {self.diameter:.3f} km and {hazard_text} potentially hazardous."
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
