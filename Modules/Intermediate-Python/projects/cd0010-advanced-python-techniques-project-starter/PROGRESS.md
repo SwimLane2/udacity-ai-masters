@@ -10,8 +10,8 @@
 | Task 1: `CloseApproach.__init__` | Complete | Parse `_designation`, `time`, `distance`, `velocity`; set `neo=None`. |
 | Task 1: `CloseApproach.time_str` | Complete | Use `datetime_to_str(self.time)`. |
 | Task 1: `CloseApproach.__str__` | Complete | Must match README format. |
-| Task 2a: `load_neos` / `load_approaches` | Pending | In `extract.py`. |
-| Task 2b: `NEODatabase` linking + lookups | Pending | In `database.py`. |
+| Task 2a: `load_neos` / `load_approaches` | Complete | In `extract.py`. |
+| Task 2b: `NEODatabase` linking + lookups | Complete | In `database.py`. |
 | Task 3a: `create_filters` | Pending | In `filters.py`. |
 | Task 3b: `query` stream | Pending | In `database.py`. |
 | Task 3c: `limit` | Pending | In `filters.py`. |
