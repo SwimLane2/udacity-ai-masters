@@ -55,16 +55,14 @@ class NearEarthObject:
 
     @property
     def fullname(self):
-        """Return a representation of the full name of this NEO."""
-        
+        """Return a representation of the full name of this NEO."""        
         # Build "{designation} ({name})" when name exists, otherwise designation.
         if self.name:
             return f"{self.designation} ({self.name})"
         return self.designation
 
     def __str__(self):
-        """Return `str(self)`."""
-        
+        """Return `str(self)`."""        
         # Human-readable NEO summary.
         hazard_text = "is" if self.hazardous else "is not"
         return f"NEO {self.fullname} has a diameter of {self.diameter:.3f} km and {hazard_text} potentially hazardous."
@@ -123,8 +121,7 @@ class CloseApproach:
         return datetime_to_str(self.time)
 
     def __str__(self):
-        """Return `str(self)`."""
-        
+        """Return `str(self)`."""        
         # Human-readable close-approach summary.
         fullname = self.neo.fullname if self.neo is not None else self._designation
         return (
