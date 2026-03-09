@@ -12,9 +12,9 @@
 | Task 1: `CloseApproach.__str__` | Complete | Must match README format. |
 | Task 2a: `load_neos` / `load_approaches` | Complete | In `extract.py`. |
 | Task 2b: `NEODatabase` linking + lookups | Complete | In `database.py`. |
-| Task 3a: `create_filters` | Pending | In `filters.py`. |
-| Task 3b: `query` stream | Pending | In `database.py`. |
-| Task 3c: `limit` | Pending | In `filters.py`. |
+| Task 3a: `create_filters` | Complete | In `filters.py`. |
+| Task 3b: `query` stream | Complete | In `database.py`. |
+| Task 3c: `limit` | Complete | In `filters.py`. |
 | Task 4: `write_to_json` / `write_to_csv` | Pending | In `write.py`. |
 
 ## Style
