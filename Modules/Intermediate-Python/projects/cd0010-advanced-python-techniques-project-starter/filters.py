@@ -108,8 +108,67 @@ def create_filters(
     :param hazardous: Whether the NEO of a matching `CloseApproach` is potentially hazardous.
     :return: A collection of filters for use with `query`.
     """
-    # TODO: Decide how you will represent your filters.
-    return ()
+    filters = []
+
+    # Date-based filters.
+    if date is not None:
+        filters.append(lambda close_approach, date=date: close_approach.time.date() == date)
+
+    if start_date is not None:
+        filters.append(lambda close_approach, start_date=start_date: close_approach.time.date() >= start_date)
+
+    if end_date is not None:
+        filters.append(lambda close_approach, end_date=end_date: close_approach.time.date() <= end_date)
+
+    # Distance-based filters.
+    if distance_min is not None:
+        filters.append(
+            lambda close_approach, distance_min=distance_min:
+            close_approach.distance >= distance_min
+        )
+
+    if distance_max is not None:
+        filters.append(
+            lambda close_approach, distance_max=distance_max:
+            close_approach.distance <= distance_max
+        )
+
+    # Velocity-based filters.
+    if velocity_min is not None:
+        filters.append(
+            lambda close_approach, velocity_min=velocity_min:
+            close_approach.velocity >= velocity_min
+        )
+
+    if velocity_max is not None:
+        filters.append(
+            lambda close_approach, velocity_max=velocity_max:
+            close_approach.velocity <= velocity_max
+        )
+
+    # Diameter-based filters (on linked NEO).
+    if diameter_min is not None:
+        filters.append(
+            lambda close_approach, diameter_min=diameter_min:
+            close_approach.neo.diameter >= diameter_min
+        )
+
+    if diameter_max is not None:
+        filters.append(
+            lambda close_approach, diameter_max=diameter_max:
+            close_approach.neo.diameter <= diameter_max
+        )
+
+    # Hazardous flag filter (True or False are both valid user choices).
+    if hazardous is not None:
+        filters.append(
+            lambda close_approach, hazardous=hazardous:
+            close_approach.neo.hazardous == hazardous
+        )
+
+    return filters
+
+
 
 
 def limit(iterator, n=None):
@@ -121,5 +180,15 @@ def limit(iterator, n=None):
     :param n: The maximum number of values to produce.
     :yield: The first (at most) `n` values from the iterator.
     """
-    # TODO: Produce at most `n` values from the given iterator.
-    return iterator
+    if n in (None, 0):
+        for item in iterator:
+            yield item
+        return
+
+    count = 0
+    for item in iterator:
+        if count >= n:
+            break
+        yield item
+        count += 1
+
