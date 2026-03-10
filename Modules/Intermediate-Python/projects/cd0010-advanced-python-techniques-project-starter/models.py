@@ -32,6 +32,7 @@ class NearEarthObject:
     initialized to an empty collection, but eventually populated in the
     `NEODatabase` constructor.
     """
+
     # Constructor accepts parsed NEO fields directly.
     def __init__(self, designation, name=None, diameter=float('nan'), hazardous=False):
         """Create a new NearEarthObject.
@@ -55,14 +56,14 @@ class NearEarthObject:
 
     @property
     def fullname(self):
-        """Return a representation of the full name of this NEO."""        
+        """Return a representation of the full name of this NEO."""
         # Build "{designation} ({name})" when name exists, otherwise designation.
         if self.name:
             return f"{self.designation} ({self.name})"
         return self.designation
 
     def __str__(self):
-        """Return `str(self)`."""        
+        """Return `str(self)`."""
         # Human-readable NEO summary.
         hazard_text = "is" if self.hazardous else "is not"
         return f"NEO {self.fullname} has a diameter of {self.diameter:.3f} km and {hazard_text} potentially hazardous."
@@ -71,6 +72,15 @@ class NearEarthObject:
         """Return `repr(self)`, a computer-readable string representation of this object."""
         return f"NearEarthObject(designation={self.designation!r}, name={self.name!r}, " \
                f"diameter={self.diameter:.3f}, hazardous={self.hazardous!r})"
+
+    def serialize(self):
+        """Return a JSON/CSV-ready representation of this NEO."""
+        return {
+            'designation': self.designation,
+            'name': self.name,
+            'diameter_km': self.diameter,
+            'potentially_hazardous': self.hazardous,
+        }
 
 
 class CloseApproach:
@@ -86,6 +96,7 @@ class CloseApproach:
     private attribute, but the referenced NEO is eventually replaced in the
     `NEODatabase` constructor.
     """
+
     # Constructor accepts parsed close-approach fields directly.
     def __init__(self, des='', cd=None, dist=0.0, v_rel=0.0):
         """Create a new `CloseApproach`.
@@ -121,7 +132,7 @@ class CloseApproach:
         return datetime_to_str(self.time)
 
     def __str__(self):
-        """Return `str(self)`."""        
+        """Return `str(self)`."""
         # Human-readable close-approach summary.
         fullname = self.neo.fullname if self.neo is not None else self._designation
         return (
@@ -132,3 +143,11 @@ class CloseApproach:
         """Return `repr(self)`, a computer-readable string representation of this object."""
         return f"CloseApproach(time={self.time_str!r}, distance={self.distance:.2f}, " \
                f"velocity={self.velocity:.2f}, neo={self.neo!r})"
+
+    def serialize(self):
+        """Return a JSON/CSV-ready representation of this close approach."""
+        return {
+            'datetime_utc': self.time_str,
+            'distance_au': self.distance,
+            'velocity_km_s': self.velocity,
+        }

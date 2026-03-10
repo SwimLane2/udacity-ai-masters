@@ -21,6 +21,7 @@ class NEODatabase:
     help fetch NEOs by primary designation or by name and to help speed up
     querying for close approaches that match criteria.
     """
+
     def __init__(self, neos, approaches):
         """Create a new `NEODatabase`.
 
@@ -53,7 +54,6 @@ class NEODatabase:
                 approach.neo = neo
                 neo.approaches.append(approach)
 
-
     def get_neo_by_designation(self, designation):
         """Find and return an NEO by its primary designation.
 
@@ -68,7 +68,6 @@ class NEODatabase:
         :return: The `NearEarthObject` with the desired primary designation, or `None`.
         """
         return self._neo_by_designation.get(designation)
-
 
     def get_neo_by_name(self, name):
         """Find and return an NEO by its name.
