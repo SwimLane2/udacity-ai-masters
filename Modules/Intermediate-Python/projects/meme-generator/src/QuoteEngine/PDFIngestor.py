@@ -34,8 +34,8 @@ class PDFIngestor(IngestorInterface):
                 for body, author in matches:
                     quotes.append(QuoteModel(body.strip(), author.strip()))
 
-        except Exception as e:
-            print(f'Error while parsing PDF file: {e}')
+        except (FileNotFoundError, ValueError) as e:
+            raise ValueError(f'Error while parsing ... file: {e}') from e
 
         finally:
             if os.path.exists(temp_file):

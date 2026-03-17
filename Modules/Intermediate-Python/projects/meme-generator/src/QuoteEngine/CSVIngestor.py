@@ -27,7 +27,7 @@ class CSVIngestor(IngestorInterface):
                     author = row['author']
                     quotes.append(QuoteModel(body, author))
 
-        except Exception as e:
-            print(f'Error while parsing CSV file: {e}')
+        except (FileNotFoundError, ValueError) as e:
+            raise ValueError(f'Error while parsing ... file: {e}') from e
 
         return quotes

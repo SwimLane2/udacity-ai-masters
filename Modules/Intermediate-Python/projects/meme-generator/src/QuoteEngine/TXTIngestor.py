@@ -25,10 +25,10 @@ class TXTIngestor(IngestorInterface):
                     if not line:
                         continue
 
-                    body, author = line.split(' - ')
+                    body, author = line.rsplit(' - ', 1)
                     quotes.append(QuoteModel(body, author))
 
-        except Exception as e:
-            print(f'Error while parsing TXT file: {e}')
+        except (FileNotFoundError, ValueError) as e:
+            raise ValueError(f'Error while parsing ... file: {e}') from e
 
         return quotes
