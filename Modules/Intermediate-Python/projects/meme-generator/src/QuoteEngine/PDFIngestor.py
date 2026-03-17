@@ -1,6 +1,7 @@
 """Ingest quotes from PDF files."""
 
 import os
+import re
 import subprocess
 
 from .IngestorInterface import IngestorInterface
@@ -26,14 +27,12 @@ class PDFIngestor(IngestorInterface):
             subprocess.call(call)
 
             with open(temp_file, 'r', encoding='utf-8') as infile:
-                for line in infile.readlines():
-                    line = line.strip()
+                contents = infile.read().strip()
 
-                    if not line:
-                        continue
+                matches = re.findall(r'"(.*?)"\s*-\s*([^"]+)', contents)
 
-                    body, author = line.split(' - ')
-                    quotes.append(QuoteModel(body, author))
+                for body, author in matches:
+                    quotes.append(QuoteModel(body.strip(), author.strip()))
 
         except Exception as e:
             print(f'Error while parsing PDF file: {e}')
