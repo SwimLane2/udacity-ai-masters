@@ -1,5 +1,9 @@
 """Create memes by drawing quote text onto images."""
 
+import os
+import random
+from PIL import Image, ImageDraw
+
 
 class MemeEngine:
     """Generate meme images with quote text and author text."""
@@ -20,4 +24,27 @@ class MemeEngine:
         :param width: Maximum width of the output image.
         :return: Path to the generated meme image.
         """
-        pass
+        try:
+            img = Image.open(img_path)
+            if img.width > width:
+                ratio = width / img.width
+                new_height = int(img.height * ratio)
+                img = img.resize((width, new_height))
+
+            draw = ImageDraw.Draw(img)
+            message = f'"{text}"\n- {author}'
+            draw.text((10, 10), message, fill='white')
+
+            if not os.path.exists(self.output_dir):
+                os.makedirs(self.output_dir)
+
+            out_path = os.path.join(
+                self.output_dir,
+                f'meme_{random.randint(0, 1000000)}.jpg'
+            )
+
+            img.save(out_path)
+
+            return out_path
+        except (FileNotFoundError, OSError, ValueError) as e:
+            raise ValueError(f'Error while creating meme: {e}') from e
