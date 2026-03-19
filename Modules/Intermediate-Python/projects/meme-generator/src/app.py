@@ -1,3 +1,5 @@
+"""Run the Flask web app for generating memes."""
+
 import random
 import os
 import requests
@@ -12,8 +14,7 @@ meme = MemeEngine('./static')
 
 
 def setup():
-    """ Load all resources """
-
+    """Load all resources."""
     quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                    './_data/DogQuotes/DogQuotesDOCX.docx',
                    './_data/DogQuotes/DogQuotesPDF.pdf',
@@ -26,7 +27,7 @@ def setup():
     images_path = "./_data/photos/dog/"
 
     imgs = []
-    for root, dirs, files in os.walk(images_path):
+    for root, _, files in os.walk(images_path):
         for file_name in files:
             imgs.append(os.path.join(root, file_name))
 
@@ -38,8 +39,7 @@ quotes, imgs = setup()
 
 @app.route('/')
 def meme_rand():
-    """ Generate a random meme """
-
+    """Generate a random meme."""
     img = random.choice(imgs)
     quote = random.choice(quotes)
     path = meme.make_meme(img, quote.body, quote.author)
@@ -49,7 +49,7 @@ def meme_rand():
 
 @app.route('/create', methods=['GET'])
 def meme_form():
-    """ User input for meme information """
+    """Display the form for user meme input."""
     return render_template('meme_form.html')
 
 
@@ -61,7 +61,7 @@ def meme_post():
     author = request.form.get('author')
 
     temp_path = './tmp/temp_image.jpg'
-    
+
     if not os.path.exists('./tmp'):
         os.makedirs('./tmp')
 
