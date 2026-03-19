@@ -8,23 +8,27 @@ from flask import Flask, render_template, abort, request
 from QuoteEngine import Ingestor
 from MemeEngine import MemeEngine
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 app = Flask(__name__)
 
-meme = MemeEngine('./static')
+meme = MemeEngine(os.path.join(ROOT_DIR, 'static'))
 
 
 def setup():
     """Load all resources."""
-    quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
-                   './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
-                   './_data/DogQuotes/DogQuotesCSV.csv']
+    quote_files = [
+        os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesTXT.txt'),
+        os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesDOCX.docx'),
+        os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesPDF.pdf'),
+        os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesCSV.csv'),
+    ]
 
     quotes = []
     for file_path in quote_files:
         quotes.extend(Ingestor.parse(file_path))
 
-    images_path = "./_data/photos/dog/"
+    images_path = os.path.join(ROOT_DIR, '_data', 'photos', 'dog')
 
     imgs = []
     for root, _, files in os.walk(images_path):
@@ -43,6 +47,7 @@ def meme_rand():
     img = random.choice(imgs)
     quote = random.choice(quotes)
     path = meme.make_meme(img, quote.body, quote.author)
+    path = f'/static/{os.path.basename(path)}'
 
     return render_template('meme.html', path=path)
 
@@ -60,18 +65,20 @@ def meme_post():
     body = request.form.get('body')
     author = request.form.get('author')
 
-    temp_path = './tmp/temp_image.jpg'
+    temp_dir = os.path.join(ROOT_DIR, 'tmp')
+    temp_path = os.path.join(temp_dir, 'temp_image.jpg')
 
-    if not os.path.exists('./tmp'):
-        os.makedirs('./tmp')
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
 
     try:
-        response = requests.get(image_url)
+        response = requests.get(image_url, timeout=10)
 
         with open(temp_path, 'wb') as outfile:
             outfile.write(response.content)
 
         path = meme.make_meme(temp_path, body, author)
+        path = f'/static/{os.path.basename(path)}'
 
         os.remove(temp_path)
 

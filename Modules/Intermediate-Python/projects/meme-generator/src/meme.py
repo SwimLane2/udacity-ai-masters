@@ -8,6 +8,8 @@ from argparse import ArgumentParser
 from QuoteEngine import Ingestor, QuoteModel
 from MemeEngine import MemeEngine
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def generate_meme(path=None, body=None, author=None):
     """Generate a meme given a path and a quote."""
@@ -15,7 +17,7 @@ def generate_meme(path=None, body=None, author=None):
     quote = None
 
     if path is None:
-        images = "./_data/photos/dog/"
+        images = os.path.join(ROOT_DIR, '_data', 'photos', 'dog')
         imgs = []
         for root, _, files in os.walk(images):
             imgs = [os.path.join(root, name) for name in files]
@@ -25,10 +27,13 @@ def generate_meme(path=None, body=None, author=None):
         img = path
 
     if body is None:
-        quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
-                       './_data/DogQuotes/DogQuotesDOCX.docx',
-                       './_data/DogQuotes/DogQuotesPDF.pdf',
-                       './_data/DogQuotes/DogQuotesCSV.csv']
+        quote_files = [
+            os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesTXT.txt'),
+            os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesDOCX.docx'),
+            os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesPDF.pdf'),
+            os.path.join(ROOT_DIR, '_data', 'DogQuotes', 'DogQuotesCSV.csv'),
+        ]
+
         quotes = []
         for f in quote_files:
             quotes.extend(Ingestor.parse(f))
@@ -39,7 +44,7 @@ def generate_meme(path=None, body=None, author=None):
             raise ValueError('Author Required if Body is Used')
         quote = QuoteModel(body, author)
 
-    meme = MemeEngine('./tmp')
+    meme = MemeEngine(os.path.join(ROOT_DIR, 'tmp'))
     path = meme.make_meme(img, quote.body, quote.author)
     return path
 
