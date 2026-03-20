@@ -35,8 +35,10 @@ It includes:
 
 - `QuoteModel` to store the quote body and author  
 - `IngestorInterface` as the base class for all ingestors  
-- `TXTIngestor`, `CSVIngestor`, `DOCXIngestor`, and `PDFIngestor` for each file type  
+- `TextIngestor`, `CSVIngestor`, `DocxIngestor`, and `PDFIngestor` for each file type  
 - `Ingestor` to choose the correct ingestor automatically  
+
+The CSV ingestor uses the `pandas` library to read CSV files.
 
 ---
 
@@ -48,6 +50,7 @@ It:
 - opens an image  
 - resizes it  
 - adds the quote body and author  
+- places the caption at a random location on the image  
 - saves the new image  
 - returns the output path  
 
@@ -73,6 +76,7 @@ This project uses the following Python packages:
 - requests  
 - Pillow  
 - python-docx  
+- pandas  
 
 It also requires Xpdf for PDF parsing using the `pdftotext` command.
 
