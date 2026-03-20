@@ -12,7 +12,6 @@ class Ingestor(IngestorInterface):
 
     ingestors = [TextIngestor, CSVIngestor, DocxIngestor, PDFIngestor]
 
-
     @classmethod
     def parse(cls, path):
         """Parse a file using the first ingestor that supports it."""
