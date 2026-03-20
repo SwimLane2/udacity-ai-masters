@@ -33,7 +33,11 @@ class MemeEngine:
 
             draw = ImageDraw.Draw(img)
             message = f'"{text}"\n- {author}'
-            draw.text((10, 10), message, fill='white')
+
+            x = random.randint(10, max(10, img.width - 200))
+            y = random.randint(10, max(10, img.height - 100))
+
+            draw.text((x, y), message, fill='white')
 
             if not os.path.exists(self.output_dir):
                 os.makedirs(self.output_dir)

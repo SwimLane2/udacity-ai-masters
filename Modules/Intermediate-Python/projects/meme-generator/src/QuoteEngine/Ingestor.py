@@ -1,16 +1,17 @@
 """Select the correct ingestor for a given file type."""
 
 from .IngestorInterface import IngestorInterface
-from .TXTIngestor import TXTIngestor
+from .TextIngestor import TextIngestor
 from .CSVIngestor import CSVIngestor
-from .DOCXIngestor import DOCXIngestor
+from .DocxIngestor import DocxIngestor
 from .PDFIngestor import PDFIngestor
 
 
 class Ingestor(IngestorInterface):
     """Choose the appropriate ingestor based on file extension."""
 
-    ingestors = [TXTIngestor, CSVIngestor, DOCXIngestor, PDFIngestor]
+    ingestors = [TextIngestor, CSVIngestor, DocxIngestor, PDFIngestor]
+
 
     @classmethod
     def parse(cls, path):

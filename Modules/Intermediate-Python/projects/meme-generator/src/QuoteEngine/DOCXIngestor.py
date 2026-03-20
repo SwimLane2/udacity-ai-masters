@@ -6,7 +6,7 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class DOCXIngestor(IngestorInterface):
+class DocxIngestor(IngestorInterface):
     """Read quotes from DOCX files."""
 
     allowed_extensions = ['docx']

@@ -1,6 +1,6 @@
 """Ingest quotes from CSV files."""
 
-import csv
+import pandas as pd
 
 from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
@@ -20,14 +20,13 @@ class CSVIngestor(IngestorInterface):
         quotes = []
 
         try:
-            with open(path, 'r', encoding='utf-8') as infile:
-                reader = csv.DictReader(infile)
-                for row in reader:
-                    body = row['body']
-                    author = row['author']
-                    quotes.append(QuoteModel(body, author))
+            dataframe = pd.read_csv(path)
+            for _, row in dataframe.iterrows():
+                body = row['body']
+                author = row['author']
+                quotes.append(QuoteModel(body, author))
 
-        except (FileNotFoundError, ValueError) as e:
-            raise ValueError(f'Error while parsing ... file: {e}') from e
+        except (FileNotFoundError, ValueError, KeyError) as e:
+            raise ValueError(f'Error while parsing CSV file: {e}') from e
 
         return quotes

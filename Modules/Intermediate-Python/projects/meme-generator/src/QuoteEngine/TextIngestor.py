@@ -4,7 +4,7 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 
-class TXTIngestor(IngestorInterface):
+class TextIngestor(IngestorInterface):
     """Read quotes from TXT files."""
 
     allowed_extensions = ['txt']
