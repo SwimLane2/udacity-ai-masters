@@ -1,6 +1,7 @@
 # Data Architect
 
-Welcome to my **Data Architecture Nanodegree** project portfolio.  
+Welcome to my **Data Architecture Nanodegree** portfolio.
+
 This repository documents my learning journey across modern data architecture, relational database design, scalable data systems, big data platforms, and data governance.
 
 ---
