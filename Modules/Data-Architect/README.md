@@ -1,3 +1,5 @@
+# Data Architect
+
 This module focuses on designing scalable, secure, and governed enterprise data solutions through practical architecture and database design projects.
 
 ## Modules
