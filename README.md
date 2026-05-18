@@ -23,7 +23,7 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 | Agentic AI | ⏳ Upcoming |
 | Data Analyst | ⏳ Upcoming |
 | Deep Learning | ⏳ Upcoming |
-| Introduction to Machine Learning with PyTorch | ⏳ Upcoming |
+| Machine Learning with PyTorch | ⏳ Upcoming |
 | Statistics for Data Analysis | ⏳ Upcoming |
 
 ---
