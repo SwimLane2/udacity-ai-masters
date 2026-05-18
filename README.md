@@ -27,8 +27,6 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 | Agentic AI                                | ⏳ Upcoming  |
 | Ethical Artificial Intelligence Practices | ⏳ Upcoming  |
 
----
-
 ## Elective Programmes
 
 | Module | Status |
@@ -40,17 +38,18 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 ## MSc AI Learning Roadmap
 
 ```mermaid
-flowchart TD
+flowchart LR
 
-    A[AI Programming with Python] --> B[Intermediate Python]
-    B --> C[Data Architect]
-    C --> D[Statistics for Data Analysis]
-    D --> E[Data Analyst]
-    E --> F[Machine Learning with PyTorch]
-    F --> G[Deep Learning]
-    G --> H[Generative AI]
-    H --> I[Agentic AI]
-    I --> J[Ethical Artificial Intelligence Practices]
+    A[Programming Foundations]
+    B[Data & Architecture]
+    C[Statistical Thinking]
+    D[Machine Learning]
+    E[Deep Learning]
+    F[Generative AI]
+    G[Agentic Systems]
+    H[Responsible AI]
+
+    A --> B --> C --> D --> E --> F --> G --> H
 ```
 
 > 📌 Modules are intentionally ordered based on my planned learning progression, moving from programming and data foundations toward machine learning, generative AI, and advanced agentic systems.
