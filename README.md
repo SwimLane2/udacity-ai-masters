@@ -40,58 +40,52 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 ```mermaid
 flowchart TB
 
-    %% Top Row
-
-    subgraph "Programming Foundations"
-        direction LR
-        A["AI Programming
+ subgraph subGraph0["Programming Foundations"]
+        A["1. AI Programming
 with Python ✅"]
-        B["Intermediate
+
+        B["2. Intermediate
 Python ✅"]
-        A --> B
-    end
+ end
 
-    subgraph "Data & Architecture"
-        direction LR
-        C["Data Architect 🚧"]
-        D["Statistics for
+ subgraph subGraph1["Data & Architecture"]
+        C["3. Data Architect 🚧"]
+
+        D["4. Statistics for
 Data Analysis"]
-        E["Data Analysis"]
 
-        C --> D --> E
-    end
+        E["5. Data Analysis"]
+ end
 
-    B --> C
-
-    %% Second Row
-
-    subgraph "AI & Machine Learning"
-        direction LR
-        F["Machine Learning
+ subgraph subGraph2["AI & Machine Learning"]
+        F["6. Machine Learning
 with PyTorch"]
 
-        G["Deep Learning"]
+        G["7. Deep Learning"]
+ end
 
-        F --> G
-    end
+ subgraph subGraph3["Advanced AI"]
+        H["8. Generative AI"]
 
-    subgraph "Advanced AI"
-        direction LR
-        H["Generative AI"]
+        I["9. Agentic AI"]
 
-        I["Agentic AI"]
-
-        J["Ethical Artificial
+        J["10. Ethical Artificial
 Intelligence Practices"]
+ end
 
-        H --> I --> J
-    end
+    A --> B
 
-    %% Curved transition downward
+    C --> D
+    D --> E
 
-    E ==> F
+    F --> G
 
-    G --> H
+    H --> I
+    I --> J
+
+    subGraph0 --> subGraph1
+    subGraph1 -.-> subGraph2
+    subGraph2 --> subGraph3
 ```
 
 > 📌 Modules are intentionally ordered to reflect my planned progression from programming and data foundations through to machine learning, generative AI, and advanced agentic systems.
