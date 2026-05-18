@@ -40,17 +40,30 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 ```mermaid
 flowchart LR
 
-    A[AI Programming 
-(with Python) ✅]
-    B[Intermediate Python ✅]
-    C[Data Architect 🚧]
-    D[Statistics for Data Analysis]
-    E[Data Analysis]
-    F[Machine Learning with PyTorch]
-    G[Deep Learning]
-    H[Generative AI]
-    I[Agentic AI]
-    J[Ethical AI Practices]
+    A["AI Programming
+with Python ✅"]
+
+    B["Intermediate
+Python ✅"]
+
+    C["Data Architect 🚧"]
+
+    D["Statistics for
+Data Analysis"]
+
+    E["Data Analysis"]
+
+    F["Machine Learning
+with PyTorch"]
+
+    G["Deep Learning"]
+
+    H["Generative AI"]
+
+    I["Agentic AI"]
+
+    J["Ethical AI
+Practices"]
 
     A --> B --> C --> D --> E --> F --> G --> H --> I --> J
 ```
