@@ -38,18 +38,20 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 ## MSc AI Learning Roadmap
 
 ```mermaid
-flowchart LR
+flowchart TD
 
-    A[Programming Foundations]
-    B[Data & Architecture]
-    C[Statistical Thinking]
-    D[Machine Learning]
-    E[Deep Learning]
-    F[Generative AI]
-    G[Agentic Systems]
-    H[Responsible AI]
+    A[AI Programming with Python ✅]
+    B[Intermediate Python ✅]
+    C[Data Architect 🚧]
+    D[Statistics for Data Analysis]
+    E[Data Analyst]
+    F[Machine Learning with PyTorch]
+    G[Deep Learning]
+    H[Generative AI]
+    I[Agentic AI]
+    J[Ethical AI Practices]
 
-    A --> B --> C --> D --> E --> F --> G --> H
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
 ```
 
 > 📌 Modules are intentionally ordered based on my planned learning progression, moving from programming and data foundations toward machine learning, generative AI, and advanced agentic systems.
