@@ -85,9 +85,9 @@ Practices ⏳"]
     H --> I
     I --> J
 
-    subGraph0 --> subGraph1
+    subGraph0 -.-> subGraph1
     subGraph1 -.-> subGraph2
-    subGraph2 --> subGraph3
+    subGraph2 -.-> subGraph3
 ```
 
 ---
