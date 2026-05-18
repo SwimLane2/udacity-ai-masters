@@ -16,15 +16,16 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 
 ## Core Nanodegree Programmes
 
-| Module | Status |
-|---|---|
-| AI Programming with Python | ✅ Completed |
-| Generative AI | ⏳ Upcoming |
-| Agentic AI | ⏳ Upcoming |
-| Data Analyst | ⏳ Upcoming |
-| Deep Learning | ⏳ Upcoming |
-| Machine Learning with PyTorch | ⏳ Upcoming |
-| Statistics for Data Analysis | ⏳ Upcoming |
+| Module                                    | Status      |
+| ----------------------------------------- | ----------- |
+| AI Programming with Python                | ✅ Completed |
+| Statistics for Data Analysis              | ⏳ Upcoming  |
+| Data Analyst                              | ⏳ Upcoming  |
+| Machine Learning with PyTorch             | ⏳ Upcoming  |
+| Deep Learning                             | ⏳ Upcoming  |
+| Generative AI                             | ⏳ Upcoming  |
+| Agentic AI                                | ⏳ Upcoming  |
+| Ethical Artificial Intelligence Practices | ⏳ Upcoming  |
 
 ---
 
@@ -35,6 +36,24 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 | Intermediate Python | ✅ Completed |
 | Data Architect | 🚧 In Progress |
 
+---
+## MSc AI Learning Roadmap
+
+```mermaid
+flowchart TD
+
+    A[AI Programming with Python] --> B[Intermediate Python]
+    B --> C[Data Architect]
+    C --> D[Statistics for Data Analysis]
+    D --> E[Data Analyst]
+    E --> F[Machine Learning with PyTorch]
+    F --> G[Deep Learning]
+    G --> H[Generative AI]
+    H --> I[Agentic AI]
+    I --> J[Ethical Artificial Intelligence Practices]
+```
+
+> 📌 Modules are intentionally ordered based on my planned learning progression, moving from programming and data foundations toward machine learning, generative AI, and advanced agentic systems.
 ---
 
 # Purpose of this Repository
