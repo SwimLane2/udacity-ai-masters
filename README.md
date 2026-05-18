@@ -1,9 +1,65 @@
-# Udacity Master's in Artificial Intelligence – Project Workspace
+# MSc Artificial Intelligence Portfolio
 
-This repository contains my work for the **Udacity/Woolf University Master’s in Artificial Intelligence** programme.  
-All exercises, practice notebooks, and project submissions are organised by nanodegree and module.
+A practical portfolio documenting my journey through the Udacity Institute of AI & Technology Master of Science in Artificial Intelligence, delivered in partnership with Woolf University.
 
-The development workflow uses **Google Colab + GitHub**, avoiding the need for local installation while providing a clean, cloud-based environment for Python, data science, and AI experimentation.
+This repository contains hands-on projects, notebooks, exercises, and supporting material across AI, Python, data architecture, and modern AI-assisted development workflows.
 
 ---
 
+## About the MSc Programme
+
+The MSc programme covers AI, machine learning, deep learning, generative AI, data science, and data architecture through a combination of core and elective Nanodegree programmes.
+
+---
+
+# Current Progress
+
+## Core Nanodegree Programmes
+
+| Module | Status |
+|---|---|
+| AI Programming with Python | ✅ Completed |
+| Generative AI | ⏳ Upcoming |
+| Agentic AI | ⏳ Upcoming |
+| Data Analyst | ⏳ Upcoming |
+| Deep Learning | ⏳ Upcoming |
+| Introduction to Machine Learning with PyTorch | ⏳ Upcoming |
+| Statistics for Data Analysis | ⏳ Upcoming |
+
+---
+
+## Elective Programmes
+
+| Module | Status |
+|---|---|
+| Intermediate Python | ✅ Completed |
+| Data Architect | 🚧 In Progress |
+
+---
+
+# Purpose of this Repository
+
+This repository serves as:
+
+- a technical learning portfolio
+- a collection of practical AI and data projects
+- a record of my MSc progression
+- a space to experiment with AI-assisted engineering workflows
+
+The goal is not only to complete coursework, but to build practical implementation skills and reusable engineering patterns.
+
+---
+
+# Working Approach
+
+This portfolio intentionally combines:
+
+- enterprise architecture thinking
+- hands-on coding and experimentation
+- notebook-driven learning
+- AI-assisted development workflows
+- structured technical documentation
+
+---
+
+> ⚡ This is a living portfolio. New modules, projects, notebooks, and capstone work will continue to be added as the MSc Artificial Intelligence programme progresses.
