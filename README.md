@@ -53,25 +53,26 @@ Python ✅"]
         C["3. Data Architect 🚧"]
 
         D["4. Statistics for
-Data Analysis"]
+Data Analysis ⏳ Upcoming"]
 
-        E["5. Applied Data Analytics"]
+        E["5. Applied Data 
+Analytics ⏳ Upcoming"]
  end
 
  subgraph subGraph2["AI & Machine Learning"]
         F["6. Machine Learning
-with PyTorch"]
+with PyTorch ⏳ Upcoming"]
 
-        G["7. Deep Learning"]
+        G["7. Deep Learning ⏳ Upcoming"]
  end
 
  subgraph subGraph3["Advanced AI"]
-        H["8. Generative AI"]
+        H["8. Generative AI ⏳ Upcoming"]
 
-        I["9. Agentic AI"]
+        I["9. Agentic AI ⏳ Upcoming"]
 
-        J["10. Ethical Artificial
-Intelligence Practices"]
+        J["10. Ethical AI
+Practices ⏳ Upcoming"]
  end
 
     A --> B
