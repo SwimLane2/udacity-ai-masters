@@ -8,7 +8,7 @@ This repository contains hands-on projects, notebooks, exercises, and supporting
 
 ## About the MSc Programme
 
-The MSc programme covers AI, machine learning, deep learning, generative AI, data science, and data architecture through a combination of core and elective Nanodegree programmes.
+The MSc programme combines core and elective Nanodegree programmes covering AI, machine learning, deep learning, generative AI, data science, and data architecture.
 
 ---
 
@@ -20,7 +20,7 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 | ----------------------------------------- | ----------- |
 | AI Programming with Python                | ✅ Completed |
 | Statistics for Data Analysis              | ⏳ Upcoming  |
-| Data Analyst                              | ⏳ Upcoming  |
+| Applied Data Analytics                    | ⏳ Upcoming  |
 | Machine Learning with PyTorch             | ⏳ Upcoming  |
 | Deep Learning                             | ⏳ Upcoming  |
 | Generative AI                             | ⏳ Upcoming  |
@@ -36,6 +36,7 @@ The MSc programme covers AI, machine learning, deep learning, generative AI, dat
 
 ---
 ## MSc AI Learning Roadmap
+The roadmap below reflects my planned progression through programming foundations, data systems, machine learning, and advanced AI engineering concepts.
 
 ```mermaid
 flowchart TB
@@ -54,7 +55,7 @@ Python ✅"]
         D["4. Statistics for
 Data Analysis"]
 
-        E["5. Data Analysis"]
+        E["5. Applied Data Analytics"]
  end
 
  subgraph subGraph2["AI & Machine Learning"]
@@ -98,23 +99,15 @@ This repository serves as:
 
 - a technical learning portfolio
 - a collection of practical AI and data projects
-- a record of my MSc progression
-- a space to experiment with AI-assisted engineering workflows
+- a record of my MSc journey
+- a space to explore modern AI-assisted development and engineering workflows
 
-The goal is not only to complete coursework, but to build practical implementation skills and reusable engineering patterns.
-
----
-
-# Working Approach
-
-This portfolio intentionally combines:
+The portfolio combines:
 
 - enterprise architecture thinking
 - hands-on coding and experimentation
 - notebook-driven learning
-- AI-assisted development workflows
 - structured technical documentation
+- AI-assisted development workflows
 
----
-
-> ⚡ This is a living portfolio. New modules, projects, notebooks, and capstone work will continue to be added as the MSc Artificial Intelligence programme progresses.
+> ⚡The goal is not only to complete coursework, but to build practical implementation skills, reusable engineering patterns, and a deeper understanding of modern AI systems.
