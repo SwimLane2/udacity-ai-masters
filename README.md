@@ -36,7 +36,7 @@ The MSc programme combines core and elective Nanodegree programmes covering AI, 
 
 ---
 ## MSc AI Learning Roadmap
-The roadmap below reflects my planned progression through programming foundations, data systems, machine learning, and advanced AI engineering concepts.
+> 📌 The roadmap below reflects my planned progression. Modules are intentionally ordered to reflect a structured learning path from programming foundations through to machine learning, generative AI, and advanced agentic systems.
 
 ```mermaid
 flowchart TB
@@ -88,8 +88,56 @@ Intelligence Practices"]
     subGraph1 -.-> subGraph2
     subGraph2 --> subGraph3
 ```
+```mermaid
+flowchart TB
 
-> 📌 Modules are intentionally ordered to reflect my planned progression from programming and data foundations through to machine learning, generative AI, and advanced agentic systems.
+ subgraph subGraph0["Programming Foundations"]
+        A["[1] AI Programming
+with Python ✅"]
+
+        B["[2] Intermediate
+Python ✅"]
+ end
+
+ subgraph subGraph1["Data & Architecture"]
+        C["[3] Data Architect 🚧"]
+
+        D["[4] Statistics for
+Data Analysis"]
+
+        E["[5] Applied Data Analytics"]
+ end
+
+ subgraph subGraph2["AI & Machine Learning"]
+        F["[6] Machine Learning
+with PyTorch"]
+
+        G["[7] Deep Learning"]
+ end
+
+ subgraph subGraph3["Advanced AI"]
+        H["[8] Generative AI"]
+
+        I["[9] Agentic AI"]
+
+        J["[10] Ethical Artificial
+Intelligence Practices"]
+ end
+
+    A --> B
+
+    C --> D
+    D --> E
+
+    F --> G
+
+    H --> I
+    I --> J
+
+    subGraph0 --> subGraph1
+    subGraph1 -.-> subGraph2
+    subGraph2 --> subGraph3
+```
 
 ---
 
