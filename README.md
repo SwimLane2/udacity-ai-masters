@@ -14,7 +14,7 @@ The MSc programme combines core and elective Nanodegree programmes covering AI, 
 
 # Current Progress
 
-## Core Nanodegree Programmes
+## Core Modules
 
 | Module                                    | Status      |
 | ----------------------------------------- | ----------- |
@@ -27,7 +27,7 @@ The MSc programme combines core and elective Nanodegree programmes covering AI, 
 | Agentic AI                                | ⏳ Upcoming  |
 | Ethical Artificial Intelligence Practices | ⏳ Upcoming  |
 
-## Elective Programmes
+## Elective Modules
 
 | Module | Status |
 |---|---|
