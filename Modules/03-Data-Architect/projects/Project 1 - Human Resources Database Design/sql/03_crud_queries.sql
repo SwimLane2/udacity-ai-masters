@@ -18,3 +18,13 @@ SELECT d.department_nm, COUNT(e.emp_id) AS total_employees FROM department d JOI
 
 -- Question 6
 SELECT e.emp_nm AS employee_name, j.job_title, d.department_nm, m.emp_nm AS manager_name, ejh.start_date, ejh.end_date FROM employee e JOIN employee_job_history ejh ON e.emp_id = ejh.emp_id JOIN job j ON ejh.job_id = j.job_id JOIN department d ON e.department_id = d.department_id LEFT JOIN employee m ON e.manager_id = m.emp_id WHERE e.emp_nm = 'Toni Lembeck';
+
+-- Question 7
+-- Example table security implementation for employee salary access
+CREATE ROLE readonly_user;
+GRANT SELECT ON employee, department, job, location, employee_job_history, education_level TO readonly_user;
+REVOKE ALL ON employee_salary FROM readonly_user;
+
+CREATE ROLE hr_manager;
+GRANT SELECT, INSERT, UPDATE ON employee_salary TO hr_manager;
+GRANT SELECT, INSERT, UPDATE ON employee, department, job, location, employee_job_history, education_level TO hr_manager;
